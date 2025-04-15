@@ -2,7 +2,7 @@
     <h1 class="mb-4">Cadastro de Cliente</h1>
 
     <!-- Formulário de cadastro -->
-    <form wire:submit.prevent="cadastrar">
+    <form wire:submit.prevent="store">
         <div class="form-group">
             <label for="nome">Nome</label>
             <input type="text" id="nome" class="form-control" wire:model="nome" required>
@@ -36,30 +36,5 @@
         <button type="submit" class="btn btn-primary mt-3">Cadastrar</button>
     </form>
 
-    <!-- Lista de usuários cadastrados -->
-    <h2 class="mt-5">Cliente Cadastrados</h2>
-    <table class="table table-striped mt-3">
-        <thead>
-            <tr>
-                <th>Nome</th>
-                <th>Endereço</th>
-                <th>Telefone</th>
-                <th>Email</th>
-                <th>Ações</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($clientes as $cliente)
-                <tr>
-                    <td>{{ $cliente->nome }}</td>
-                    <td>{{ $cliente->endereco }}</td>
-                    <td>{{ $cliente->telefone }}</td>
-                    <td>{{ $cliente->email }}</td>
-                    <td>
-                        <button class="btn btn-danger btn-sm">Excluir</button>
-                    </td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
+  
 </div>
